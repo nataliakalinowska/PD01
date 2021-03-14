@@ -1,0 +1,52 @@
+package smile;
+
+/**
+ *
+ * @author nataliakalinowska
+ */
+import java.awt.*;
+import javax.swing.*;
+
+public class Smile extends JPanel {
+
+ 
+  public void paintComponent(Graphics g){
+        
+	super.paintComponent(g);
+        
+        g.setColor(Color.red);
+        g.fillRect(0, 0, 200, 200);
+        
+        g.setColor(Color.yellow);
+        g.fillOval(50, 50, 100, 100);
+        
+        g.setColor(Color.red);
+        g.drawArc(75, 100, 50, 33, -20, -140);
+
+        g.setColor(Color.black);
+        g.fillOval(76, 83, 8, 10);
+        g.fillOval(116, 83, 8, 10);        
+        
+        g.setColor(Color.green);
+        g.fillPolygon(new int[]{100, 95, 105}, new int[]{95, 115, 115}, 3);
+        
+        g.setColor(Color.white);
+        g.setFont(new Font("Serif", Font.BOLD, 30));
+        g.drawString("Smile", 3, 199);
+    }
+
+    public Dimension getPreferredSize(){
+        return new Dimension(200, 200);
+    }
+    
+public static void main(String[] args){
+        
+        JFrame frame = new JFrame("Smile");
+        JPanel world = new Smile();
+        frame.getContentPane().add(world);
+        frame.setLocation(200, 200);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+}
